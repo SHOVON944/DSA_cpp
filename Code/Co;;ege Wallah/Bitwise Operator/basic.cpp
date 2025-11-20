@@ -3,7 +3,7 @@ using namespace std;
 
 int main()
 {
-    int n1 = s; // 0101
+    int n1 = 5; // 0101
     cout<<(n1<<1)<<endl; // 10
     cout<<(n1>>1)<<endl; //2
 
