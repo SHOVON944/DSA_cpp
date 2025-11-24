@@ -18,7 +18,6 @@ vector<vector<int>> pascalTriangle(int n){
     return pascal;
 }
 
-
 int main()
 {
     int n;
