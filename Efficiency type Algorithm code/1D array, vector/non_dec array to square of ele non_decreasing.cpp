@@ -11,11 +11,12 @@ void changing_even_than_odd(vector<int> &v){
         if(abs(v[lt]) > abs(v[rt])){
             store_res[pos] = v[lt] * v[lt];
             lt++;
+            pos--;
         } else{
             store_res[pos] = v[rt] * v[rt];
             rt--;
+            pos--;
         }
-        pos--;
     }
     v = store_res;
 }
@@ -23,7 +24,7 @@ void changing_even_than_odd(vector<int> &v){
 
 int main()
 {
-    vector<int> vec{-7, -3, 2, 3, 11};
+    vector<int> vec = {-7, -3, 2, 3, 11};
     changing_even_than_odd(vec);
     for(int i : vec) cout<<i<<" ";
 
