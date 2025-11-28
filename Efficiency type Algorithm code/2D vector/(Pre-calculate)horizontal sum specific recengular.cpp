@@ -4,7 +4,7 @@ using namespace std;
 int rectangleSum(vector<vector<int>> &matrix, int l1, int r1, int l2, int r2){
 
 
-    // prefix sum array
+    // prefix sum array row wise
     for(int i=0; i<matrix.size(); i++){
         for(int j=1; j<matrix[0].size(); j++){
             matrix[i][j] += matrix[i][j-1];
