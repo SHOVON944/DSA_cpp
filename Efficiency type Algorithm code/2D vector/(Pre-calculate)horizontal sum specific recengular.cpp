@@ -3,10 +3,21 @@ using namespace std;
 
 int rectangleSum(vector<vector<int>> &matrix, int l1, int r1, int l2, int r2){
 
+
+    // prefix sum array
+    for(int i=0; i<matrix.size(); i++){
+        for(int j=1; j<matrix[0].size(); j++){
+            matrix[i][j] += matrix[i][j-1];
+        }
+    }
+
     int sum = 0;
     for(int i=l1; i<=l2; i++){
-        for(int j=r1; j<=r2; j++){
-            sum += matrix[i][j];
+        if(r1 != 0){
+            sum = sum + (matrix[i][r2] - matrix[i][r1-1]);
+        } else{
+            // matrix[i][r1-1] = 0
+            sum = sum + matrix[i][r2]; 
         }
     }
     return sum;
