@@ -30,6 +30,7 @@ int main()
 
     *ptr = marks + 1;
     cout<<*ptr<<endl;
+    cout<<marks<<endl;
 
 
     return 0;
