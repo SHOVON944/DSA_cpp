@@ -3,8 +3,10 @@ using namespace std;
 
 int main()
 {
-    int *ptr = NULL;
-    cout<<ptr<<" "<<*ptr<<endl;
+    int *ptr = '\0';
+    int *ptr1 = 0;
+    cout<<ptr<<" "<<endl;
+    cout<<ptr1<<" "<<endl;
 
     return 0;
 }
