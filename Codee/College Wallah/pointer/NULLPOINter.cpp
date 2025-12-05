@@ -3,7 +3,7 @@ using namespace std;
 
 int main()
 {
-    int *ptr = '\0';
+    int *ptr = NULL;
     int *ptr1 = 0;
     cout<<ptr<<" "<<endl;
     cout<<ptr1<<" "<<endl;
