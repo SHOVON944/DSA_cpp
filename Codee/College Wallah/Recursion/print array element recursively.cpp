@@ -16,3 +16,21 @@ int main()
 
     return 0;
 }
+
+
+// call index 0 to n-1
+/*
+void recursive_Print(int arr[], int index, int n) {
+    if (index == n) return;
+    cout << arr[index] << " ";
+    recursive_Print(arr, index + 1, n);
+}
+
+int main() {
+    int arr[] = {1,2,3,4,5};
+    int n = sizeof(arr)/sizeof(arr[0]);
+
+    recursive_Print(arr, 0, n);
+}
+
+*/
