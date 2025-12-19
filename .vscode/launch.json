@@ -1,24 +1,30 @@
 {
-    "version": "2.0.0",
-    "tasks": [
+    "version": "0.2.0",
+    "configurations": [
         {
-            "label": "C/C++: g++.exe build active file",
-            "type": "shell",
-            "command": "C:\\MinGW\\bin\\g++.exe",
-            "args": [
-                "-g",
-                "${file}",
-                "-o",
-                "${fileDirname}\\${fileBasenameNoExtension}.exe"
+            "name": "Debug C++ (MinGW)",
+            "type": "cppdbg",
+            "request": "launch",
+            "program": "${fileDirname}\\${fileBasenameNoExtension}.exe",
+            "args": [],
+            "stopAtEntry": false,
+            "cwd": "${fileDirname}",
+            "environment": [],
+            "externalConsole": false,
+            "MIMode": "gdb",
+
+            // 🔽 ঠিক এখানেই দেবেন
+            "justMyCode": true,
+            "skipFiles": [
+                "<builtin>",
+                "**/bits/**",
+                "**/stl/**",
+                "**/include/c++/**",
+                "**/x86_64-w64-mingw32/**"
             ],
-            "group": {
-                "kind": "build",
-                "isDefault": true
-            },
-            "presentation": {
-                "reveal": "always"
-            },
-            "problemMatcher": ["$gcc"]
+            // 🔼 এখান পর্যন্ত
+
+            "preLaunchTask": "C/C++: g++.exe build active file"
         }
     ]
 }
