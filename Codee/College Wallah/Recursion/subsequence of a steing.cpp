@@ -1,17 +1,18 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-void subsequence_Print(int i, string &s, string curr) {
+void subsequence_Print(int i, string &s, string subseq) {
     if (i == s.size()) {
-        if (!curr.empty())
-            cout << curr << " ";
+        if (!subseq.empty())
+            cout << subseq << " ";
         return;
     }
-    subsequence_Print(i + 1, s, curr);
-    subsequence_Print(i + 1, s, curr + s[i]);
+    subsequence_Print(i + 1, s, subseq);
+    subsequence_Print(i + 1, s, subseq + s[i]);
 }
 
-int main() {
+int main()
+{
     string s;
     cin >> s;
     subsequence_Print(0, s, "");
