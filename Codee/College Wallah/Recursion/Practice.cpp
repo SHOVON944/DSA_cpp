@@ -51,7 +51,6 @@ void mergeSort(vector<int> &arr, int st, int end) {
 int main() {
     vector<int> arr = {12, 31, 35, 8, 32, 17};
     int n = arr.size();
-
     cout << "Original array: ";
     for (int num : arr) {
         cout << num << " ";
