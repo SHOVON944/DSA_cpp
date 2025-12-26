@@ -5,26 +5,15 @@
             "name": "Debug C++ (MinGW)",
             "type": "cppdbg",
             "request": "launch",
-            "program": "${fileDirname}\\${fileBasenameNoExtension}.exe",
+            "program": "${workspaceFolder}/a.exe",
             "args": [],
             "stopAtEntry": false,
-            "cwd": "${fileDirname}",
+            "cwd": "${workspaceFolder}",
             "environment": [],
-            "externalConsole": false,
+            "externalConsole": true,
             "MIMode": "gdb",
-
-            // 🔽 ঠিক এখানেই দেবেন
-            "justMyCode": true,
-            "skipFiles": [
-                "<builtin>",
-                "**/bits/**",
-                "**/stl/**",
-                "**/include/c++/**",
-                "**/x86_64-w64-mingw32/**"
-            ],
-            // 🔼 এখান পর্যন্ত
-
-            "preLaunchTask": "C/C++: g++.exe build active file"
+            "miDebuggerPath": "C:/Program Files/CodeBlocks/MinGW/bin/gdb.exe",
+            "preLaunchTask": "Build all C++ files"
         }
     ]
 }

@@ -2,24 +2,24 @@
     "version": "2.0.0",
     "tasks": [
         {
-            "label": "C/C++: gcc.exe build active file",
+            "label": "Build all C++ files",
             "type": "shell",
-            "command": "gcc",
+            "command": "C:/Program Files/CodeBlocks/MinGW/bin/g++.exe",
             "args": [
                 "-g",
                 "${file}",
                 "-o",
-                "${fileDirname}\\${fileBasenameNoExtension}.exe"
+                "${workspaceFolder}/a.exe"
+            ],
+            "options": {
+                "cwd": "${workspaceFolder}"
+            },
+            "problemMatcher": [
+                "$gcc"
             ],
             "group": {
                 "kind": "build",
                 "isDefault": false
-            },
-            "presentation": {
-                "echo": true,
-                "reveal": "always",
-                "focus": false,
-                "panel": "shared"
             }
         },
         {
