@@ -60,6 +60,20 @@ public:
         delete temp;
     }
 
+    void pop_back(){    // while(temp->next->next!=NULL), eita empty(), 1 value er jnno work korbe na...2/2+ value er jnno work korbe
+        if(head==NULL){
+            cout<<"LL is empty"<<endl;
+            return;
+        }
+        Node* temp = tail;
+        tail = tail->prev;
+        if(tail!=NULL){
+            tail->next = NULL;
+        }
+        temp->prev = NULL;
+        delete temp;
+    }
+
     void print(){
         Node* temp = head;
         while(temp!=NULL){
@@ -81,6 +95,8 @@ int main()
     dll.push_back(5);
 
     dll.pop_front();
+
+    dll.pop_back();
 
     dll.print();
 
