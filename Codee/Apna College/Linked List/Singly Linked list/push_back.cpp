@@ -36,8 +36,6 @@ public:
         if(head == NULL){
             head = tail = newNode;
         } else{
-            // newNode->next = head;
-            // head = newNode;
             tail->next = newNode;
             tail = newNode;
         }
