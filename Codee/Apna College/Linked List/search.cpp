@@ -98,6 +98,19 @@ public:
         cout<<" NULL"<<endl;
     }
 
+    int search(int key){
+        Node* temp = head;
+        int idx = 0;
+        while(temp!=NULL){
+            if(temp->data==key){
+                return idx;
+            }
+            temp = temp->next;
+            idx++;
+        }
+        return -1;
+    }
+
 };
 
 
@@ -109,9 +122,7 @@ int main()
     ll.push_front(2);
     ll.push_front(1);
 
-    ll.insert(4, 0);
-
-    ll.printLL();
+    cout<<ll.search(2)<<endl;
 
     return 0;
 }
