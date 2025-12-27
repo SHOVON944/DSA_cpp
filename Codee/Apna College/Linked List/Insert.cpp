@@ -53,18 +53,36 @@ public:
         delete temp;
     }
 
-    void pop_back(){    // while(temp->next->next!=NULL), eita empty(), 1 value er jnno work korbe na...2/2+ value er jnno work korbe
+    void pop_back(){
         if(head==NULL){
             cout<<"LL is empty"<<endl;
             return;
         }
         Node* temp = head;
-        while(temp->next!=tail){
+        while(temp->next!=tail){    // while(temp->next->next!=NULL), eita empty(), 1 value er jnno work korbe na...2/2+ value er jnno work korbe
             temp = temp->next;
         }
         temp->next = NULL;
         delete tail;
         tail = temp;
+    }
+
+    void insert(int val, int pos){
+        if(pos<0){
+            cout<<"Invalid position"<<endl;
+            return;
+        }
+        if(pos==0){
+            push_front(val);
+        }
+        Node* temp = head;
+        for(int i=0; i<pos-1; i++){
+            temp = temp->next;
+        }
+
+        Node* newNode = new Node(val);
+        newNode->next = temp->next;
+        temp->next = newNode;
     }
 
     void printLL(){
@@ -83,15 +101,11 @@ int main()
 {
     List ll;
 
-    ll.push_front(1);
-    ll.push_front(2);
     ll.push_front(3);
+    ll.push_front(2);
+    ll.push_front(1);
 
-    ll.push_back(4);
-
-    ll.pop_front();
-
-    ll.pop_back();
+    ll.insert(4, 1);
 
     ll.printLL();
 
