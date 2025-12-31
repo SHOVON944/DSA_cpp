@@ -36,9 +36,9 @@ int heightOfTheTree(Node* root){
         return 0;
     }
     int leftHt = heightOfTheTree(root->left);
-    int righttHt = heightOfTheTree(root->right);
+    int rightHt = heightOfTheTree(root->right);
 
-    return max(leftHt, righttHt) + 1;
+    return max(leftHt, rightHt) + 1;
 }
 
 
