@@ -41,10 +41,8 @@ void topView(Node* root){
         Node* curr = q.front().first;
         int currHD = q.front().second;
         q.pop();
-//fix: done with a code without
-        if(m.find(currHD) == m.end()){      //TODO: if condition ta bad dia m[currHD] = curr->data; likhle seta bottomView te convert hobe...
-            m[currHD] = curr->data;
-        }
+
+        m[currHD] = curr->data;         //TODO: if condition add kore dileeta topView te convert hobe... if(m.find(currHD) == m.end())
 
         if(curr->left!=NULL){
             q.push({curr->left, currHD-1});
