@@ -18,6 +18,7 @@
  */
 class Solution {
 public:
+    int ans = 0;
     int height(TreeNode* root) {    // O(n)
         if(root==NULL){
             return 0;
@@ -26,19 +27,15 @@ public:
         int leftHt = height(root->left);
         int rightHt = height(root->right);
 
+        int currDiameter = leftHt + rightHt;
+        ans = max(ans, currDiameter);
+
         return max(leftHt, rightHt) + 1;
     }
 
-    int diameterOfBinaryTree(TreeNode* root) {      // final O(n*n)
-        if(root==NULL){
-            return 0;
-        }
-
-        int leftDiam = diameterOfBinaryTree(root->left);
-        int rightDiam = diameterOfBinaryTree(root->right);
-
-        int rootPassDiam = height(root->left) + height(root->right);    //O(n)
-        return max(rootPassDiam, max(leftDiam, rightDiam));
+    int diameterOfBinaryTree(TreeNode* root) {      // final O(n)
+        height(root);
+        return ans;
     }
 };
 // @lc code=end
