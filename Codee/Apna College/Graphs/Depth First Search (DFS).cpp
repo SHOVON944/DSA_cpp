@@ -70,16 +70,17 @@ public:
     void DFS(){
         int src = 0;
         vector<bool> visit(V, false);
+        DFS_Helper(src, visit);
+        cout<<endl;
 /*
 ! if any one or more edge are not connected than we should call multiple source in diff diff components in BFS/ DFS
+thle uporer DF_Helper(src, visit); and cout<<endl; bad dia nicer ei code ta likhbo
 *   for(int i=0; i<V; i++){
 *       if(!visit[i]){
 *         DFS_Helper(i, visit);
 *        }
     }
 */
-        DFS_Helper(src, visit);
-        cout<<endl;
     }
 
 };
