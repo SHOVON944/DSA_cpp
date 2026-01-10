@@ -55,7 +55,8 @@ public:
     }
 };
 
-int main(){
+int main()
+{
     Stack st;
 
     st.push(1);
