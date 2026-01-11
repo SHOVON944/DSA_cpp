@@ -1,20 +1,45 @@
-#include<bits/stdc++.h>
+#include <iostream>
+#include <string>
+#include <stack>
 using namespace std;
+bool isValid(string s)
+{
+    stack<char> st;
+    for (char ch : s)
+    {
+        // brack open er jonno
+        if (ch == '(' || ch == '{' || ch == '[')
+        {
+            st.push(ch);
+        }
+        // brack close
+        else
+        {
+            if (st.empty())
+                return false;
+            char top = st.top();
+            st.pop();
+            if ((ch == ')' && top != '(') || (ch == '}' && top != '{') ||
+                (ch == ']' && top != '['))
+            {
+                return false;
+            }
+        }
+    }
+    return st.empty(); // stack empty hole valid
+}
 
 int main()
 {
-    int arr[] = {3, 1, 2, 4, 0, 6};
-    int max_s = INT_MIN;
-    int max_f = INT_MIN;
-    for(int i=0; i<6; i++){
-        if(max_f<arr[i]){
-            max_s = max_f;
-            max_f = arr[i];
-        }
+    string s;
+    cin >> s;
+    if (isValid(s))
+    {
+        cout << "true";
     }
-
-    cout<<max_s;
-
-
+    else
+    {
+        cout << "false";
+    }
     return 0;
-}
+}  
