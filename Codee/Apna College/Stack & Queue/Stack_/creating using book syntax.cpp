@@ -1,7 +1,6 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-
 void PUSH(int STACK[], int &TOP, int MAXSTK, int ITEM){
     if (TOP == MAXSTK - 1){
         cout << "OVERFLOW" << endl;
