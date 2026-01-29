@@ -1,4 +1,4 @@
-#include<bits/stdc++.h>
+#include<iostream>
 using namespace std;
 
 class Node{
@@ -71,7 +71,8 @@ public:
 };
 
 /* ---------- Main ---------- */
-int main() {
+int main()
+{
     Graph g(5);
 
     g.addEdge(0, 1);
